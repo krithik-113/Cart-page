@@ -21,22 +21,19 @@ const ItemPrice = ({ children }) => {
     };
     (async () => await fetchData())();
   }, []);
-
-  const [num, setNum] = useState([
-    { num: 1 },
-    { num: 2 },
-    { num: 3 },
-    { num: 4 },
-    { num: 5 },
-    { num: 6 },
-    { num: 7 },
-    { num: 8 },
-    { num: 9 },
-    { num: 10 },
-  ]);
+    
+  const [num, setNum] = useState([]);
   let [quantityPrice, setQuantityPrice] = useState(0);
 
-  const handleQuantity = (e, price) => {
+    const handleQuantity = (e, price) => {
+        let listItem = [];
+        let len = item.length > 0 ? item[0].stock : 1
+        for (let i = 1; i <= len; i++){
+            listItem = [...quantityPrice]
+            listItem.push({ num: i })
+            setQuantityPrice(listItem)
+        }
+        console.log(quantityPrice)
     setQuantityPrice(e * price);
   };
 
