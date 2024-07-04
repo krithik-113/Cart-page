@@ -8,7 +8,7 @@ export const Items = createContext({
 
 const ItemPrice = ({ children }) => {
   const [item, setItem] = useState([]);
-  const API_URL = "http://localhost:3000/db.json";
+  const API_URL = `${process.env.PUBLIC_URL}/db.json`;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,18 +22,21 @@ const ItemPrice = ({ children }) => {
     (async () => await fetchData())();
   }, []);
     
-  const [num, setNum] = useState([]);
+  const [num, setNum] = useState([
+    { num: 1 },
+    { num: 2 },
+    { num: 3},
+    { num: 4 },
+    { num: 5 },
+    { num: 6 },
+    { num: 7 },
+    { num: 8 },
+    { num: 9 },
+    {num  : 10}
+  ]);
   let [quantityPrice, setQuantityPrice] = useState(0);
 
     const handleQuantity = (e, price) => {
-        let listItem = [];
-        let len = item.length > 0 ? item[0].stock : 1
-        for (let i = 1; i <= len; i++){
-            listItem = [...quantityPrice]
-            listItem.push({ num: i })
-            setQuantityPrice(listItem)
-        }
-        console.log(quantityPrice)
     setQuantityPrice(e * price);
   };
 
