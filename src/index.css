@@ -30,10 +30,14 @@ body {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   padding: 10px  30px;
   display: flex;
+  img{
+    height:300px;
+    width:300px;
+  }
   .detail{
     padding: 20px;
     background-color: wheat;
-    width: 100%;
+    
     display: flex;
     justify-content: space-between;
   }
@@ -42,21 +46,10 @@ body {
     width: fit-content;
     justify-content: end;
     align-items: center;
-    button{
-     height: 50px;
-     width: 150px;
-      border: none;
-      background-color: rgb(216, 124, 140);
-      color : black;
-      cursor: pointer;
-    }
   }
 }
 .des{
   width: 100ch;
-}
-.cart-conatiner{
-  display: flex;
 }
 select{
   margin-right: 30px;
@@ -85,4 +78,29 @@ select{
 }
 hr{
   width: 50%;
+}
+
+
+@media (max-width:600px){
+  .image{
+    display: block;
+    img{
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .detail{
+    font-size: 0.5rem;
+    margin-right: 50px;
+    width: 90%;
+  }
+  .des{
+    width: 30ch;
+  }
+  .pricing{
+    grid-template-columns: repeat(2,200px);
+  }
+  hr{
+    width: 100%;
+  }
 }

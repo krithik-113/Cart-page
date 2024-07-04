@@ -10,8 +10,6 @@ function App() {
             <img
               src="https://s3no.cashify.in/cashify/store/product//767e2cc9aabe431182284132fb1fb059-box.jpg?p=es5sq&s=es"
               alt="pic"
-              heigth={300}
-              width={250}
             />
 
             <div className="detail">
